@@ -34,9 +34,9 @@ var Control = function (_MapControl) {
   }
 
   _createClass(Control, [{
-    key: 'componentWillMount',
-    value: function componentWillMount() {
-      _get(Object.getPrototypeOf(Control.prototype), 'componentWillMount', this).call(this);
+    key: 'componentDidMount',
+    value: function componentDidMount() {
+      _get(Object.getPrototypeOf(Control.prototype), 'componentDidMount', this).call(this);
       var _props = this.props;
       var _children = _props.children;
       var _map = _props.map;
