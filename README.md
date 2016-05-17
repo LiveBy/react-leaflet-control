@@ -1,7 +1,7 @@
 #react-leaflet-control
 
 ##installation
-`npm install LiveBy/react-leaflet-choropleth`
+`npm install LiveBy/react-leaflet-control`
 
 ##Usage
 
