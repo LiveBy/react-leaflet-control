@@ -1,0 +1,28 @@
+{
+  "name": "react-leaflet-control",
+  "version": "1.0.0",
+  "description": "Dumb Empty Component for control with react leaflet",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"No Tests Yet\""
+  },
+  "keywords": [
+    "react",
+    "leaflet",
+    "control",
+    "MapControl",
+    "map",
+    "mapbox"
+  ],
+  "author": "Joel <joel@liveby.co>",
+  "license": "ISC",
+  "devDependencies": {
+    "babel": "^6.5.2",
+    "babel-preset-es2015": "^6.9.0",
+    "babel-preset-react": "^6.5.0",
+    "leaflet": "^0.7.7",
+    "react": "^15.0.2",
+    "react-dom": "^15.0.2",
+    "react-leaflet": "^0.11.5"
+  }
+}
