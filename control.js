@@ -24,8 +24,8 @@ function _possibleConstructorReturn(self, call) { if (!self) { throw new Referen
 
 function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
 
-var Control = function (_MapComponent) {
-  _inherits(Control, _MapComponent);
+var Control = function (_MapControl) {
+  _inherits(Control, _MapControl);
 
   function Control(props) {
     _classCallCheck(this, Control);
@@ -49,12 +49,8 @@ var Control = function (_MapComponent) {
     }
   }, {
     key: 'componentWillUpdate',
-    value: function componentWillUpdate(_ref) {
-      var position = _ref.position;
-
-      if (position !== this.props.position) {
-        this.leafletElement.setPosition(position);
-      }
+    value: function componentWillUpdate(next) {
+      _get(Object.getPrototypeOf(Control.prototype), 'componentWillMount', this).call(this, next);
       this.renderContent();
     }
   }, {
@@ -71,7 +67,7 @@ var Control = function (_MapComponent) {
   }]);
 
   return Control;
-}(_reactLeaflet.MapComponent);
+}(_reactLeaflet.MapControl);
 
 Control.propTypes = {
   children: _react.PropTypes.node,

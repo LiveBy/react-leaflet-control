@@ -1,9 +1,9 @@
 import { Component, PropTypes, Children } from 'react';
-import { MapComponent } from 'react-leaflet';
+import { MapControl } from 'react-leaflet';
 import { Map, control } from 'leaflet';
 import { render } from 'react-dom';
 
-export default class Control extends MapComponent {
+export default class Control extends MapControl {
   static propTypes = {
     children: PropTypes.node,
     map: PropTypes.instanceOf(Map),
@@ -20,10 +20,8 @@ export default class Control extends MapComponent {
     this.leafletElement = control(props);
     this.renderContent();
   }
-  componentWillUpdate({ position }){
-    if(position !== this.props.position){
-      this.leafletElement.setPosition(position);
-    }
+  componentWillUpdate(next){
+    super.componentWillMount(next);
     this.renderContent();
   }
   renderContent(){
