@@ -20,8 +20,8 @@ export default class Control extends MapControl {
     this.leafletElement = control(props);
     this.renderContent();
   }
-  componentWillUpdate(next){
-    super.componentWillMount(next);
+  componentDidUpdate(next){
+    super.componentDidUpdate(next);
     this.renderContent();
   }
   renderContent(){

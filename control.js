@@ -48,9 +48,9 @@ var Control = function (_MapControl) {
       this.renderContent();
     }
   }, {
-    key: 'componentWillUpdate',
-    value: function componentWillUpdate(next) {
-      _get(Object.getPrototypeOf(Control.prototype), 'componentWillMount', this).call(this, next);
+    key: 'componentDidUpdate',
+    value: function componentDidUpdate(next) {
+      _get(Object.getPrototypeOf(Control.prototype), 'componentDidUpdate', this).call(this, next);
       this.renderContent();
     }
   }, {
