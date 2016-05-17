@@ -73,6 +73,6 @@ Control.propTypes = {
   children: _react.PropTypes.node,
   map: _react.PropTypes.instanceOf(_leaflet.Map),
   popupContainer: _react.PropTypes.object,
-  position: _react.PropTypes.array
+  position: _react.PropTypes.string
 };
 exports.default = Control;
