@@ -8,7 +8,7 @@ export default class Control extends MapControl {
     children: PropTypes.node,
     map: PropTypes.instanceOf(Map),
     popupContainer: PropTypes.object,
-    position: PropTypes.array
+    position: PropTypes.string
   };
   constructor(props){
     super(props);
