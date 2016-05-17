@@ -13,25 +13,24 @@ export default class Control extends MapControl {
   constructor(props){
     super(props);
   }
-  componentDidMount() {
-    super.componentDidMount();
+  componentWillMount() {
     const { children: _children, map: _map, popupContainer, ...props } = this.props;
 
     this.leafletElement = control(props);
     this.renderContent();
   }
-  componentDidUpdate(next){
+  componentDidUpdate(next) {
     super.componentDidUpdate(next);
     this.renderContent();
   }
-  renderContent(){
+  renderContent() {
     const container = this.leafletElement.getContainer();
     render(
       Children.only(this.props.children),
       container
     );
   }
-  render(){
+  render() {
     return null;
   }
   
