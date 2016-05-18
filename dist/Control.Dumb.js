@@ -14,7 +14,7 @@ exports.default = _leaflet.Control.extend({
   },
 
   onAdd: function onAdd(map) {
-    return _leaflet.DomUtil.create('div', className);
+    return _leaflet.DomUtil.create('div', this.options.className);
   },
 
   onRemove: function onRemove(map) {
