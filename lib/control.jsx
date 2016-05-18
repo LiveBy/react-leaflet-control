@@ -20,7 +20,6 @@ export default class Control extends MapControl {
     const { children: _children, map: _map, popupContainer, ...props } = this.props;
 
     this.leafletElement = new Dumb(props);
-    this.renderContent();
   }
 
   componentDidUpdate(next) {
@@ -29,7 +28,7 @@ export default class Control extends MapControl {
   }
 
   renderContent() {
-    const container = this.leafletElement.options.layerContainer._container;
+    const container = this.leafletElement.getContainer();
     render(
       Children.only(this.props.children),
       container

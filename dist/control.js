@@ -50,7 +50,6 @@ var Control = function (_MapControl) {
       var props = _objectWithoutProperties(_props, ['children', 'map', 'popupContainer']);
 
       this.leafletElement = new _Control2.default(props);
-      this.renderContent();
     }
   }, {
     key: 'componentDidUpdate',
@@ -61,7 +60,7 @@ var Control = function (_MapControl) {
   }, {
     key: 'renderContent',
     value: function renderContent() {
-      var container = this.leafletElement.options.layerContainer._container;
+      var container = this.leafletElement.getContainer();
       (0, _reactDom.render)(_react.Children.only(this.props.children), container);
     }
   }, {
