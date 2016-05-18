@@ -61,7 +61,7 @@ var Control = function (_MapControl) {
   }, {
     key: 'renderContent',
     value: function renderContent() {
-      var container = this.leafletElement.options.layerContainer;
+      var container = this.leafletElement.options.layerContainer._container;
       (0, _reactDom.render)(_react.Children.only(this.props.children), container);
     }
   }, {
