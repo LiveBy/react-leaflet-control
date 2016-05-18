@@ -14,6 +14,8 @@ var _reactLeaflet = require('react-leaflet');
 
 var _leaflet = require('leaflet');
 
+var _Control = require('./Control.Dumb');
+
 var _reactDom = require('react-dom');
 
 function _objectWithoutProperties(obj, keys) { var target = {}; for (var i in obj) { if (keys.indexOf(i) >= 0) continue; if (!Object.prototype.hasOwnProperty.call(obj, i)) continue; target[i] = obj[i]; } return target; }
@@ -43,7 +45,7 @@ var Control = function (_MapControl) {
 
       var props = _objectWithoutProperties(_props, ['children', 'map', 'popupContainer']);
 
-      this.leafletElement = (0, _leaflet.control)(props);
+      this.leafletElement = new _Control.Dumb(props);
       this.renderContent();
     }
   }, {

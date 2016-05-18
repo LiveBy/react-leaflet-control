@@ -2,10 +2,10 @@
   "name": "react-leaflet-control",
   "version": "1.0.0",
   "description": "Dumb Empty Component for control with react leaflet",
-  "main": "control.js",
+  "main": "dist/control.js",
   "scripts": {
     "test": "echo \"No Tests Yet\"",
-    "start": "babel control.jsx -o control.js"
+    "start": "babel lib -d dist"
   },
   "keywords": [
     "react",
