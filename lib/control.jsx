@@ -1,7 +1,7 @@
 import { Component, PropTypes, Children } from 'react';
 import { MapControl } from 'react-leaflet';
 import { Map } from 'leaflet';
-import { Dumb } from './Control.Dumb';
+import Dumb from './Control.Dumb';
 import { render } from 'react-dom';
 
 export default class Control extends MapControl {

@@ -16,7 +16,11 @@ var _leaflet = require('leaflet');
 
 var _Control = require('./Control.Dumb');
 
+var _Control2 = _interopRequireDefault(_Control);
+
 var _reactDom = require('react-dom');
+
+function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
 function _objectWithoutProperties(obj, keys) { var target = {}; for (var i in obj) { if (keys.indexOf(i) >= 0) continue; if (!Object.prototype.hasOwnProperty.call(obj, i)) continue; target[i] = obj[i]; } return target; }
 
@@ -45,7 +49,7 @@ var Control = function (_MapControl) {
 
       var props = _objectWithoutProperties(_props, ['children', 'map', 'popupContainer']);
 
-      this.leafletElement = new _Control.Dumb(props);
+      this.leafletElement = new _Control2.default(props);
       this.renderContent();
     }
   }, {
