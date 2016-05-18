@@ -29,7 +29,7 @@ export default class Control extends MapControl {
   }
 
   renderContent() {
-    const container = this.leafletElement.getContainer();
+    const container = this.leafletElement.options.layerContainer;
     render(
       Children.only(this.props.children),
       container
