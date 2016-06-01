@@ -1,10 +1,15 @@
 #react-leaflet-control
 
+A [React-Leaflet](https://github.com/PaulLeCam/react-leaflet) component that renders React elements in leaflet's control pane.
+
+
 ##installation
-`npm install LiveBy/react-leaflet-control`
+`npm install react-leaflet-control`
+
+##Options
+`position`: Which pane to mount to. Options are `topleft`, `topright`, `bottomleft`, `bottomright`
 
 ##Usage
-
 ```jsx
 import React, { Component } from 'react';
 import Control from 'react-leaflet-control';
@@ -28,12 +33,12 @@ export default class Example extends Component {
         maxZoom={18}
       />
       
-      <Control
-        position="topleft"
-      >
+      <Control position="topleft" >
         <button 
           onClick={ () => this.setState({bounds: [51.3, 0.7]}) }
-        >Reset Center</button>
+        >
+          Reset View
+        </button>
       </Control>
     </Map>
   }
