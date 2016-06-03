@@ -52,6 +52,12 @@ var Control = function (_MapControl) {
       this.leafletElement = new _Control2.default(props);
     }
   }, {
+    key: 'componentDidMount',
+    value: function componentDidMount() {
+      _get(Object.getPrototypeOf(Control.prototype), 'componentDidMount', this).call(this);
+      this.renderContent();
+    }
+  }, {
     key: 'componentDidUpdate',
     value: function componentDidUpdate(next) {
       _get(Object.getPrototypeOf(Control.prototype), 'componentDidUpdate', this).call(this, next);

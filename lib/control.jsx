@@ -22,6 +22,11 @@ export default class Control extends MapControl {
     this.leafletElement = new Dumb(props);
   }
 
+  componentDidMount(){
+    super.componentDidMount();
+    this.renderContent();
+  }
+
   componentDidUpdate(next) {
     super.componentDidUpdate(next);
     this.renderContent();
