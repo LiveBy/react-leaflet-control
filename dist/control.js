@@ -36,7 +36,7 @@ var Control = function (_MapControl) {
   function Control(props) {
     _classCallCheck(this, Control);
 
-    return _possibleConstructorReturn(this, Object.getPrototypeOf(Control).call(this, props));
+    return _possibleConstructorReturn(this, (Control.__proto__ || Object.getPrototypeOf(Control)).call(this, props));
   }
 
   _createClass(Control, [{
@@ -54,13 +54,13 @@ var Control = function (_MapControl) {
   }, {
     key: 'componentDidMount',
     value: function componentDidMount() {
-      _get(Object.getPrototypeOf(Control.prototype), 'componentDidMount', this).call(this);
+      _get(Control.prototype.__proto__ || Object.getPrototypeOf(Control.prototype), 'componentDidMount', this).call(this);
       this.renderContent();
     }
   }, {
     key: 'componentDidUpdate',
     value: function componentDidUpdate(next) {
-      _get(Object.getPrototypeOf(Control.prototype), 'componentDidUpdate', this).call(this, next);
+      _get(Control.prototype.__proto__ || Object.getPrototypeOf(Control.prototype), 'componentDidUpdate', this).call(this, next);
       this.renderContent();
     }
   }, {
