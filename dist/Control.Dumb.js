@@ -18,7 +18,10 @@ exports.default = _leaflet.Control.extend({
   },
 
   onRemove: function onRemove(map) {
-    map.off(this.options.onOff, this.options.handleOff, this);
+    if (this.options.onOff) {
+      map.off(this.options.onOff, this.options.handleOff, this);
+    }
+
     return this;
   }
 });
