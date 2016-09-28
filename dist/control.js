@@ -64,6 +64,11 @@ var Control = function (_MapControl) {
       this.renderContent();
     }
   }, {
+    key: 'componentWillUnmount',
+    value: function componentWillUnmount() {
+      (0, _reactDom.unmountComponentAtNode)(this.leafletElement.getContainer());
+    }
+  }, {
     key: 'renderContent',
     value: function renderContent() {
       var container = this.leafletElement.getContainer();

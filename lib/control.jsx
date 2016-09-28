@@ -2,7 +2,7 @@ import { Component, PropTypes, Children } from 'react';
 import { MapControl } from 'react-leaflet';
 import { Map } from 'leaflet';
 import Dumb from './Control.Dumb';
-import { render } from 'react-dom';
+import { render, unmountComponentAtNode } from 'react-dom';
 
 export default class Control extends MapControl {
   static propTypes = {
@@ -30,6 +30,10 @@ export default class Control extends MapControl {
   componentDidUpdate(next) {
     super.componentDidUpdate(next);
     this.renderContent();
+  }
+
+  componentWillUnmount() {
+    unmountComponentAtNode(this.leafletElement.getContainer());
   }
 
   renderContent() {
