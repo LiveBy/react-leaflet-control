@@ -13,8 +13,10 @@ exports.default = _leaflet.Control.extend({
     handleOff: function noop() {}
   },
 
-  onAdd: function onAdd(map) {
-    return _leaflet.DomUtil.create('div', this.options.className);
+  onAdd: function (map) {
+    var _controlDiv = _leaflet.DomUtil.create('div', this.options.className);
+    _leaflet.DomEvent.disableClickPropagation(_controlDiv);
+    return _controlDiv;
   },
 
   onRemove: function onRemove(map) {
