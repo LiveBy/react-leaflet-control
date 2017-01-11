@@ -5,6 +5,8 @@ import Dumb from './Control.Dumb';
 import { render, unmountComponentAtNode } from 'react-dom';
 
 export default class Control extends MapControl {
+  static contextTypes = MapControl.contextTypes;
+  static childContextTypes = MapControl.childContextTypes;
   static propTypes = {
     children: PropTypes.node,
     map: PropTypes.instanceOf(Map),
