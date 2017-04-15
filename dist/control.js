@@ -12,6 +12,10 @@ var _react = require('react');
 
 var _reactLeaflet = require('react-leaflet');
 
+var _propTypes = require('prop-types');
+
+var _propTypes2 = _interopRequireDefault(_propTypes);
+
 var _leaflet = require('leaflet');
 
 var _Control = require('./Control.Dumb');
@@ -36,31 +40,30 @@ var Control = function (_MapControl) {
   function Control(props) {
     _classCallCheck(this, Control);
 
-    return _possibleConstructorReturn(this, Object.getPrototypeOf(Control).call(this, props));
+    return _possibleConstructorReturn(this, (Control.__proto__ || Object.getPrototypeOf(Control)).call(this, props));
   }
 
   _createClass(Control, [{
     key: 'componentWillMount',
     value: function componentWillMount() {
-      var _props = this.props;
-      var _children = _props.children;
-      var _map = _props.map;
-      var popupContainer = _props.popupContainer;
-
-      var props = _objectWithoutProperties(_props, ['children', 'map', 'popupContainer']);
+      var _props = this.props,
+          _children = _props.children,
+          _map = _props.map,
+          popupContainer = _props.popupContainer,
+          props = _objectWithoutProperties(_props, ['children', 'map', 'popupContainer']);
 
       this.leafletElement = new _Control2.default(props);
     }
   }, {
     key: 'componentDidMount',
     value: function componentDidMount() {
-      _get(Object.getPrototypeOf(Control.prototype), 'componentDidMount', this).call(this);
+      _get(Control.prototype.__proto__ || Object.getPrototypeOf(Control.prototype), 'componentDidMount', this).call(this);
       this.renderContent();
     }
   }, {
     key: 'componentDidUpdate',
     value: function componentDidUpdate(next) {
-      _get(Object.getPrototypeOf(Control.prototype), 'componentDidUpdate', this).call(this, next);
+      _get(Control.prototype.__proto__ || Object.getPrototypeOf(Control.prototype), 'componentDidUpdate', this).call(this, next);
       this.renderContent();
     }
   }, {
@@ -87,9 +90,9 @@ var Control = function (_MapControl) {
 Control.contextTypes = _reactLeaflet.MapControl.contextTypes;
 Control.childContextTypes = _reactLeaflet.MapControl.childContextTypes;
 Control.propTypes = {
-  children: _react.PropTypes.node,
-  map: _react.PropTypes.instanceOf(_leaflet.Map),
-  popupContainer: _react.PropTypes.object,
-  position: _react.PropTypes.string
+  children: _propTypes2.default.node,
+  map: _propTypes2.default.instanceOf(_leaflet.Map),
+  popupContainer: _propTypes2.default.object,
+  position: _propTypes2.default.string
 };
 exports.default = Control;
