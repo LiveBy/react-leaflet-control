@@ -1,5 +1,6 @@
-import { Component, PropTypes, Children } from 'react';
+import { Component, Children } from 'react';
 import { MapControl } from 'react-leaflet';
+import PropTypes from 'prop-types';
 import { Map } from 'leaflet';
 import Dumb from './Control.Dumb';
 import { render, unmountComponentAtNode } from 'react-dom';
