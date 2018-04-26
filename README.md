@@ -1,16 +1,16 @@
-#react-leaflet-control
+# react-leaflet-control
 
 A [React-Leaflet](https://github.com/PaulLeCam/react-leaflet) component that renders React elements in leaflet's control pane.
 
 
-##installation
+## installation
 `npm install react-leaflet-control`
 
-##Options
+## Options
 `position`: Which pane to mount to. Options are `topleft`, `topright`, `bottomleft`, `bottomright`
 
-##Usage
-```jsx
+## Usage
+```js
 import React, { Component } from 'react';
 import Control from 'react-leaflet-control';
 import { Map, TileLayer } from 'react-leaflet';
