@@ -37,6 +37,7 @@ export default class Control extends MapControl {
 
   componentWillUnmount() {
     unmountComponentAtNode(this.leafletElement.getContainer());
+    this.leafletElement.remove();
   }
 
   renderContent() {
