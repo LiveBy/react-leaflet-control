@@ -1,54 +1,43 @@
-import { Component, Children } from 'react';
-import { MapControl } from 'react-leaflet';
-import PropTypes from 'prop-types';
-import { Map } from 'leaflet';
-import Dumb from './Control.Dumb';
-import { render, unmountComponentAtNode } from 'react-dom';
+import ReactDOM from "react-dom";
+import { MapControl, withLeaflet } from "react-leaflet";
+import { Control, DomUtil, DomEvent } from "leaflet";
 
-export default class Control extends MapControl {
-  static contextTypes = MapControl.contextTypes;
-  static childContextTypes = MapControl.childContextTypes;
-  static propTypes = {
-    children: PropTypes.node,
-    map: PropTypes.instanceOf(Map),
-    popupContainer: PropTypes.object,
-    position: PropTypes.string
-  };
+const DumbControl = Control.extend({
+  options: {
+    className: "",
+    onOff: "",
+    handleOff: function noop() {}
+  },
 
-  constructor(props){
-    super(props);
+  onAdd(/* map */) {
+    var _controlDiv = DomUtil.create("div", this.options.className);
+    DomEvent.disableClickPropagation(_controlDiv);
+    return _controlDiv;
+  },
+
+  onRemove(map) {
+    if (this.options.onOff) {
+      map.off(this.options.onOff, this.options.handleOff, this);
+    }
+
+    return this;
   }
+});
 
-  componentWillMount() {
-    const { children: _children, map: _map, popupContainer, ...props } = this.props;
+export default withLeaflet(
+  class LeafletControl extends MapControl {
+    createLeafletElement(props) {
+      return new DumbControl(Object.assign({}, props));
+    }
 
-    this.leafletElement = new Dumb(props);
+    render() {
+      if (!this.leafletElement || !this.leafletElement.getContainer()) {
+        return null;
+      }
+      return ReactDOM.createPortal(
+        this.props.children,
+        this.leafletElement.getContainer()
+      );
+    }
   }
-
-  componentDidMount(){
-    super.componentDidMount();
-    this.renderContent();
-  }
-
-  componentDidUpdate(next) {
-    super.componentDidUpdate(next);
-    this.renderContent();
-  }
-
-  componentWillUnmount() {
-    unmountComponentAtNode(this.leafletElement.getContainer());
-  }
-
-  renderContent() {
-    const container = this.leafletElement.getContainer();
-    render(
-      Children.only(this.props.children),
-      container
-    );
-  }
-
-  render() {
-    return null;
-  }
-
-}
+);
