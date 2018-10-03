@@ -13,7 +13,7 @@ A [React-Leaflet](https://github.com/PaulLeCam/react-leaflet) component that ren
 ```js
 import React, { Component } from 'react';
 import Control from 'react-leaflet-control';
-import { Map, TileLayer } from 'react-leaflet';
+import { Map, TileLayer, ZoomControl } from 'react-leaflet';
 
 export default class Example extends Component {
   constructor(){
