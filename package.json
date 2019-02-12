@@ -2,6 +2,7 @@
   "name": "react-leaflet-control",
   "version": "2.0.0",
   "description": "Dumb Empty Component for control with react leaflet",
+  "homepage": "https://github.com/LiveBy/react-leaflet-control",
   "main": "dist/control.js",
   "scripts": {
     "test": "echo \"No Tests Yet\"",
