@@ -30,6 +30,16 @@ export default withLeaflet(
       return new DumbControl(Object.assign({}, props));
     }
 
+    componentDidMount() {
+      super.componentDidMount();
+
+      // This is needed because the control is only attached to the map in
+      // MapControl's componentDidMount, so the container is not available
+      // until this is called. We need to now force a render so that the
+      // portal and children are actually rendered.
+      this.forceUpdate();
+    }
+
     render() {
       if (!this.leafletElement || !this.leafletElement.getContainer()) {
         return null;
