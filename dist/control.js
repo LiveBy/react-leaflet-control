@@ -6,6 +6,8 @@ Object.defineProperty(exports, "__esModule", {
 
 var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
 
+var _get = function get(object, property, receiver) { if (object === null) object = Function.prototype; var desc = Object.getOwnPropertyDescriptor(object, property); if (desc === undefined) { var parent = Object.getPrototypeOf(object); if (parent === null) { return undefined; } else { return get(parent, property, receiver); } } else if ("value" in desc) { return desc.value; } else { var getter = desc.get; if (getter === undefined) { return undefined; } return getter.call(receiver); } };
+
 var _reactDom = require("react-dom");
 
 var _reactDom2 = _interopRequireDefault(_reactDom);
@@ -56,6 +58,17 @@ exports.default = (0, _reactLeaflet.withLeaflet)(function (_MapControl) {
     key: "createLeafletElement",
     value: function createLeafletElement(props) {
       return new DumbControl(Object.assign({}, props));
+    }
+  }, {
+    key: "componentDidMount",
+    value: function componentDidMount() {
+      _get(LeafletControl.prototype.__proto__ || Object.getPrototypeOf(LeafletControl.prototype), "componentDidMount", this).call(this);
+
+      // This is needed because the control is only attached to the map in
+      // MapControl's componentDidMount, so the container is not available
+      // until this is called. We need to now force a render so that the
+      // portal and children are actually rendered.
+      this.forceUpdate();
     }
   }, {
     key: "render",
