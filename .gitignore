@@ -29,6 +29,9 @@ node_modules
 # Optional npm cache directory
 .npm
 
+# Local dependency locking
+yalc.lock
+
 # Optional REPL history
 .node_repl_history
 jsconfig.json
