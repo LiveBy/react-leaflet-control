@@ -9,6 +9,10 @@
     "test": "echo \"No Tests Yet\"",
     "start": "babel lib -d dist"
   },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/LiveBy/react-leaflet-control.git"
+  },
   "keywords": [
     "react",
     "leaflet",
